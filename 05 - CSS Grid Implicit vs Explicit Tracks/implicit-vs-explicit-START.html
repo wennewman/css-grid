@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,16 +9,27 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
-    <div class="item">4</div>
-  </div>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
 
   <style>
     .container {
       display: grid;
+      grid-gap: 20px;
+      /*explicit rows and columns outlined in dev tools dev layout overlay grid as solid line*/
+      grid-template-columns: 50px 100px;
+      grid-template-rows: 50px 100px;
+      /*the overflow cells will be implicit and managed by the grid - dotted lines in dev tools overlay grid*/
+      /*to size the implicit rows (every other row that isnt specifically defined*/
+      grid-auto-rows:  500px;
+      /*wont work - grid-auto-flow resolves this*/
+      grid-auto-columns: 100px;
     }
   </style>
 </body>
