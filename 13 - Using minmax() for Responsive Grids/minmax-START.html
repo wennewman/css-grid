@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,7 +21,14 @@
       display: grid;
       grid-gap: 20px;
       border: 10px solid var(--yellow);
-      grid-template-columns: repeat(auto-fill, 150px);
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+      /*auto-fit will not add columns - it will perfectly size your content filled columns and minmax will show 
+          the responsive layout  as you run out of space it will wrap.
+        auto-fill will expand the grid out with additional columns (change between the two above and resize the
+          width of the view
+      */
+      
     }
   </style>
 </body>
