@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -18,7 +18,7 @@
     <div class="item item6">6</div>
     <div class="item item7">7</div>
     <div class="item item8">8</div>
-    <div class="item item8">💩</div>
+    <div class="item poop">💩</div>
     <div class="item item9">9</div>
     <div class="item item10">10</div>
     <div class="item item11">11</div>
@@ -48,6 +48,31 @@
       display: grid;
       grid-gap: 20px;
       grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+    }
+    .poop {
+        background: pink;
+
+        /*grid-column-start: 2;
+        grid-column-end: 5;*/
+        /*shorthand to do this in one go*/
+        grid-column: 2/5;
+        /*or you could start at 1 and span 2 like this
+            grid-column: 1 / span 2;
+            if you do not know how many tracks you have - you can span accross to -1 (the last track)
+            grid-column: 1 / -1; (kind of like width 100% of the grid)
+            -2 is 2 from the end 
+        */
+        /*rows need to be explicitly defined before you can reference -1*/
+
+        grid-row: 3 / -1;
+
+        /*if you ever want to fill an entire grid
+            grid-column: 1 / -1;
+            grid-row: 1 / -1;
+
+            if there are items below the item you have filled the grid with, they will get pushed to the implicit grid
+        */
     }
   </style>
 </body>
