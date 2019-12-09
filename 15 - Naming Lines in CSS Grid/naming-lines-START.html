@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -44,11 +44,33 @@
 
   <style>
     .container {
-      display: grid;
-      grid-gap: 20px;
-      grid-template-columns: 1fr 500px 1fr;
-      grid-template-rows: repeat(10, auto);
+        display: grid;
+        grid-gap: 20px;
+        /*[name the lines]*/
+        grid-template-columns: 
+            [site-left] 1fr 
+            [content-start] 500px 
+            [content-end] 1fr
+            [site-right];
+        grid-template-rows: [content-top] repeat(10, auto)
+            [content-bottom];
     }
+
+    /*this is how you can position the 3 - but you can do the same thing with line naming - 
+        see row and column definition above.
+    */
+    /*.item3 {
+        background: slateblue;
+        grid-column: 2; 
+        grid-row: 1 / span 10;
+    }*/
+    /*so use the line names*/
+    .item3 {
+        background: slateblue;
+        grid-column: content-start;
+        grid-row: content-top / content-bottom;
+    }
+
   </style>
 </body>
 

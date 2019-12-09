@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -29,6 +29,36 @@
     .container {
       display: grid;
       grid-gap: 20px;
+      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-rows: 150px 150px 100px;
+      grid-template-areas: 
+          "sidebar-1 content sidebar-2"
+          "sidebar-1 content sidebar-2"
+          "footer footer footer"
+          /*"footer footer .  will leave the bottom right footer cell empty*/
+
+    }
+    .footer {
+        grid-area: footer;
+    }
+
+    .item1 {
+        grid-area: sidebar-1;
+    }
+    .item2 {
+        grid-area: content;
+    }
+    .item3 {
+        grid-area: sidebar-2;
+    }
+    /*redefines the content when resizing to smaller view - ensures the content remains at the top*/
+    @media (max-width: 700px) {
+        .container {
+            grid-template-areas:
+             "content content content"
+              "sidebar-1  sidebar-1  sidebar-2"
+              "footer footer footer"
+        }
     }
   </style>
 </body>
